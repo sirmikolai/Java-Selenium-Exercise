@@ -2,7 +2,7 @@
 
 ## Opis:
 
-SeleniumExercise jest to repozytorium z testami automatycznymi. Jeden z nich sprawdza poprawność wykonania metody, której zadaniem jest zwrócenie liczb parzystych w postaci ArrayList<Integer>. Pozostałe testy sprawdzają funkcjonalności aplikacji My Store dostępnej pod adresem http://automationpractice.com/index.php. M.in. są to:
+SeleniumExercise jest to repozytorium z testami automatycznymi. Jeden z nich sprawdza poprawność wykonania metody, której zadaniem jest zwrócenie liczb parzystych w postaci ArrayList<Integer>. Pozostałe testy sprawdzają kilka funkcjonalności aplikacji My Store dostępnej pod adresem http://automationpractice.com/index.php. M.in. są to:
 ```
 - rejestracja użytkownika,
 - logowanie,
