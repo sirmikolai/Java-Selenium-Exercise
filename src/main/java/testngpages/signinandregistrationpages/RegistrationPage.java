@@ -15,6 +15,7 @@ import java.time.format.TextStyle;
 import java.util.Locale;
 
 public class RegistrationPage extends AbstractStorePage {
+
     public static final String ROOT_CSS = "body[id='authentication']";
     private static final String GENDER_RADIO_BUTTON_CSS = "div[id='%s'] > span";
     private static final String FIRST_NAME_PERSONAL_INFORMATION_INPUT_CSS = "input[id='customer_firstname']";
@@ -35,7 +36,6 @@ public class RegistrationPage extends AbstractStorePage {
     private static final String MOBILE_PHONE_INPUT_CSS = "input[id='phone_mobile']";
     private static final String ADDRESS_ALIAS_FOR_FUTURE_REFERENCE_CSS = "input[id='alias']";
     private static final String REGISTER_BUTTON_CSS = "button[id='submitAccount']";
-
 
     public RegistrationPage(WebDriver driver) {
         super(driver);
@@ -222,5 +222,4 @@ public class RegistrationPage extends AbstractStorePage {
         seleniumWait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(AccountPage.ROOT_CSS)));
         return new AccountPage(driver);
     }
-
 }

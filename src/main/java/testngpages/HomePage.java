@@ -9,6 +9,4 @@ public class HomePage extends AbstractStorePage {
     public HomePage(WebDriver driver) {
         super(driver);
     }
-
-
 }

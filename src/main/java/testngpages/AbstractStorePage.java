@@ -47,5 +47,4 @@ public abstract class AbstractStorePage extends Page {
         }
         return page;
     }
-
 }

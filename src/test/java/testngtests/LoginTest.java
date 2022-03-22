@@ -24,6 +24,4 @@ public class LoginTest extends AbstractTest {
         Assert.assertEquals(accountPage.getWelcomeText(), "Welcome to your account. Here you can manage all of your personal information and orders.");
         Assert.assertEquals(accountPage.getUserNameFromHeader(), "Robert Farrell");
     }
-
-
 }

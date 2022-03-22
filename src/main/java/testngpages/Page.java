@@ -12,7 +12,7 @@ public class Page {
     public static final String STORE_URL = "http://automationpractice.com/index.php";
     public WebDriver driver;
     public WebDriverWait seleniumWait;
-    public Actions actions;
+    private Actions actions;
 
     public Page(WebDriver driver) {
         this.driver = driver;
@@ -20,8 +20,7 @@ public class Page {
         this.actions = new Actions(driver);
     }
 
-    public void scrollIntoView(WebElement element) {
+    protected void scrollIntoView(WebElement element) {
         actions.moveToElement(element).perform();
     }
-
 }

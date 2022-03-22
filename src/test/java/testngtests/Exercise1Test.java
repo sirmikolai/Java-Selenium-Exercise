@@ -2,7 +2,9 @@ package testngtests;
 
 import exercise1.Operation;
 import org.testng.Assert;
-import org.testng.annotations.*;
+import org.testng.annotations.AfterGroups;
+import org.testng.annotations.BeforeGroups;
+import org.testng.annotations.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -45,5 +47,4 @@ public class Exercise1Test {
     public void afterNotEmptyListTest() {
         System.out.println("Test checkingTheMethod_GetEvenNumbersFromArray_WhenArrayListIsNotEmpty ended.");
     }
-
 }

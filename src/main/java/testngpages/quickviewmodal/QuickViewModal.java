@@ -64,5 +64,4 @@ public class QuickViewModal extends Page {
         seleniumWait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(LayerCartModal.ROOT_CSS)));
         return new LayerCartModal(driver, parentPage);
     }
-
 }

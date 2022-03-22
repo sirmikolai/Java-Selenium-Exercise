@@ -9,8 +9,8 @@ import org.testng.annotations.Test;
 import testngpages.HomePage;
 import testngpages.categories.DressesCategoryPage;
 import testngpages.categories.TShirtsCategoryPage;
-import testngpages.layercartmodal.LayerCartModal;
 import testngpages.categories.WomenCategoryPage;
+import testngpages.layercartmodal.LayerCartModal;
 
 public class AddingAProductToTheCartTest extends AbstractTest {
 
@@ -64,5 +64,4 @@ public class AddingAProductToTheCartTest extends AbstractTest {
         Assert.assertEquals(layerCartModal.getSizeOfProduct(), SizeBody.S);
         layerCartModal.clickContinueShopping();
     }
-
 }

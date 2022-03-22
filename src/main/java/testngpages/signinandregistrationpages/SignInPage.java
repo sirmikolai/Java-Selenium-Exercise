@@ -8,6 +8,7 @@ import testngpages.AbstractStorePage;
 import testngpages.accountpages.AccountPage;
 
 public class SignInPage extends AbstractStorePage {
+
     public static final String ROOT_CSS = "body[id='authentication']";
     private static final String EMAIL_ADDRESS_FOR_LOGIN_INPUT_CSS = ROOT_CSS + " input[id='email']";
     private static final String PASSWORD_FOR_LOGIN_INPUT_CSS = ROOT_CSS + " input[id='passwd']";
@@ -65,5 +66,4 @@ public class SignInPage extends AbstractStorePage {
         seleniumWait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(RegistrationPage.ROOT_CSS)));
         return new RegistrationPage(driver);
     }
-
 }

@@ -1,6 +1,7 @@
 package testngtests;
 
-import datastructures.BrowserType;
+import com.devskiller.jfairy.Fairy;
+import com.devskiller.jfairy.producer.person.Person;
 import datastructures.Gender;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
@@ -9,6 +10,9 @@ import testngpages.HomePage;
 import testngpages.accountpages.AccountPage;
 
 public class RegistrationTest extends AbstractTest {
+
+    private Fairy fairy = Fairy.create();
+    private Person person = fairy.person();
 
     @BeforeClass
     public void openStorePage() {
@@ -42,5 +46,4 @@ public class RegistrationTest extends AbstractTest {
         Assert.assertEquals(accountPage.getWelcomeText(), "Welcome to your account. Here you can manage all of your personal information and orders.");
         Assert.assertEquals(accountPage.getUserNameFromHeader(), person.getFullName());
     }
-
 }

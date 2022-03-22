@@ -70,7 +70,4 @@ public class LayerCartModal extends Page {
         driver.findElement(By.cssSelector(CONTINUE_SHOPPING_CSS)).click();
         return parentPage;
     }
-
-
-
 }
