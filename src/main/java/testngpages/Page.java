@@ -1,5 +1,7 @@
 package testngpages;
 
+import datastructures.BrowserType;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -21,6 +23,10 @@ public class Page {
     }
 
     protected void scrollIntoView(WebElement element) {
+        if (System.getProperty("browser").equalsIgnoreCase(BrowserType.FIREFOX.getName())) {
+            JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+            jsExecutor.executeScript("arguments[0].scrollIntoView(false);", element);
+        }
         actions.moveToElement(element).perform();
     }
 }
