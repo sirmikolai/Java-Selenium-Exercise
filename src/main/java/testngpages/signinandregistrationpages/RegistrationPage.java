@@ -17,25 +17,25 @@ import java.util.Locale;
 public class RegistrationPage extends AbstractStorePage {
 
     public static final String ROOT_CSS = "body[id='authentication']";
-    private static final String GENDER_RADIO_BUTTON_CSS = "div[id='%s'] > span";
-    private static final String FIRST_NAME_PERSONAL_INFORMATION_INPUT_CSS = "input[id='customer_firstname']";
-    private static final String LAST_NAME_PERSONAL_INFORMATION_INPUT_CSS = "input[id='customer_lastname']";
-    private static final String PASSWORD_INPUT_CSS = "input[id='passwd']";
-    private static final String DATE_OF_BIRTH_DAY_SELECT_CSS = "select[name='days']";
-    private static final String DATE_OF_BIRTH_MONTH_SELECT_CSS = "select[id='months']";
-    private static final String DATE_OF_BIRTH_YEAR_SELECT_CSS = "select[id='years']";
-    private static final String FIRST_NAME_ADDRESS_INFORMATION_INPUT_CSS = "input[id='firstname']";
-    private static final String LAST_NAME_ADDRESS_INFORMATION_INPUT_CSS = "input[id='lastname']";
-    private static final String COMPANY_INPUT_CSS = "input[id='company']";
-    private static final String ADDRESS_LINE_1_INPUT_CSS = "input[id='address1']";
-    private static final String ADDRESS_LINE_2_INPUT_CSS = "input[id='address2']";
-    private static final String CITY_INPUT_CSS = "input[id='city']";
-    private static final String COUNTRY_SELECT_CSS = "select[id='id_country']";
-    private static final String STATE_SELECT_CSS = "select[id*='id_state']";
-    private static final String ZIP_POSTAL_CODE_INPUT_CSS = "input[id='postcode']";
-    private static final String MOBILE_PHONE_INPUT_CSS = "input[id='phone_mobile']";
-    private static final String ADDRESS_ALIAS_FOR_FUTURE_REFERENCE_CSS = "input[id='alias']";
-    private static final String REGISTER_BUTTON_CSS = "button[id='submitAccount']";
+    private static final String GENDER_RADIO_BUTTON_CSS = ROOT_CSS + " div[id='%s'] > span";
+    private static final String FIRST_NAME_PERSONAL_INFORMATION_INPUT_CSS = ROOT_CSS + " input[id='customer_firstname']";
+    private static final String LAST_NAME_PERSONAL_INFORMATION_INPUT_CSS = ROOT_CSS + " input[id='customer_lastname']";
+    private static final String PASSWORD_INPUT_CSS = ROOT_CSS + " input[id='passwd']";
+    private static final String DATE_OF_BIRTH_DAY_SELECT_CSS = ROOT_CSS + " select[name='days']";
+    private static final String DATE_OF_BIRTH_MONTH_SELECT_CSS = ROOT_CSS + " select[id='months']";
+    private static final String DATE_OF_BIRTH_YEAR_SELECT_CSS = ROOT_CSS + " select[id='years']";
+    private static final String FIRST_NAME_ADDRESS_INFORMATION_INPUT_CSS = ROOT_CSS + " input[id='firstname']";
+    private static final String LAST_NAME_ADDRESS_INFORMATION_INPUT_CSS = ROOT_CSS + " input[id='lastname']";
+    private static final String COMPANY_INPUT_CSS = ROOT_CSS + " input[id='company']";
+    private static final String ADDRESS_LINE_1_INPUT_CSS = ROOT_CSS + " input[id='address1']";
+    private static final String ADDRESS_LINE_2_INPUT_CSS = ROOT_CSS + " input[id='address2']";
+    private static final String CITY_INPUT_CSS = ROOT_CSS + " input[id='city']";
+    private static final String COUNTRY_SELECT_CSS = ROOT_CSS + " select[id='id_country']";
+    private static final String STATE_SELECT_CSS = ROOT_CSS + " select[id*='id_state']";
+    private static final String ZIP_POSTAL_CODE_INPUT_CSS = ROOT_CSS + " input[id='postcode']";
+    private static final String MOBILE_PHONE_INPUT_CSS = ROOT_CSS + " input[id='phone_mobile']";
+    private static final String ADDRESS_ALIAS_FOR_FUTURE_REFERENCE_CSS = ROOT_CSS + " input[id='alias']";
+    private static final String REGISTER_BUTTON_CSS = ROOT_CSS + " button[id='submitAccount']";
 
     public RegistrationPage(WebDriver driver) {
         super(driver);
