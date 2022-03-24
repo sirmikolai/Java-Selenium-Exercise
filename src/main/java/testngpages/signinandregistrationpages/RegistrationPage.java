@@ -140,7 +140,7 @@ public class RegistrationPage extends AbstractStorePage {
     }
 
     public RegistrationPage inputCityName(String cityName) {
-        System.out.println("Input company name: " + cityName);
+        System.out.println("Input city name: " + cityName);
         seleniumWait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(CITY_INPUT_CSS)));
         WebElement cityNameInput = driver.findElement(By.cssSelector(CITY_INPUT_CSS));
         cityNameInput.clear();
