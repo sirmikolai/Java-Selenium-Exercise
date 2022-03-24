@@ -48,7 +48,7 @@ public class QuickViewModal extends Page {
     }
 
     public QuickViewModal selectColor(Color color) {
-        System.out.println("Select size: " + color.getName());
+        System.out.println("Select color: " + color.getName());
         String colorSelectCssPath = String.format(COLOR_SELECT_CSS, color.getName());
         scrollIntoView(driver.findElement(By.cssSelector(colorSelectCssPath)));
         driver.findElement(By.cssSelector(colorSelectCssPath)).click();
