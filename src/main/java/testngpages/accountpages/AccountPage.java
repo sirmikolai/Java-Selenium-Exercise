@@ -8,8 +8,8 @@ import testngpages.AbstractStorePage;
 public class AccountPage extends AbstractStorePage {
 
     public static final String ROOT_CSS = "body[id='my-account']";
-    private static final String WELCOME_TEXT_CSS = "p[class='info-account']";
-    private static final String USER_NAME_IN_HEADER = "div[class='header_user_info'] > a > span";
+    private static final String WELCOME_TEXT_CSS = ROOT_CSS + " p[class='info-account']";
+    private static final String USER_NAME_IN_HEADER = ROOT_CSS + " div[class='header_user_info'] > a > span";
 
     public AccountPage(WebDriver driver) {
         super(driver);
