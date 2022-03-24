@@ -21,10 +21,6 @@ public class Page {
     }
 
     protected void scrollIntoView(WebElement element) {
-        if (System.getProperty("browser").equalsIgnoreCase(BrowserType.FIREFOX.getName())) {
-            JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
-            jsExecutor.executeScript("arguments[0].scrollIntoView(false);", element);
-        }
         actions.moveToElement(element).perform();
     }
 }
