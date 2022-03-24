@@ -38,7 +38,7 @@ public class LayerCartModal extends Page {
     }
 
     public Color getColorOfProduct() {
-        System.out.println("Get product name");
+        System.out.println("Get color of product");
         scrollIntoView(driver.findElement(By.cssSelector(PRODUCT_ATTRIBUTES_CSS)));
         seleniumWait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(PRODUCT_ATTRIBUTES_CSS)));
         String colorName = driver.findElement(By.cssSelector(PRODUCT_ATTRIBUTES_CSS)).getText().replaceFirst(",[^,]*$", "");
@@ -51,7 +51,7 @@ public class LayerCartModal extends Page {
     }
 
     public SizeBody getSizeOfProduct() {
-        System.out.println("Get product name");
+        System.out.println("Get size of product");
         scrollIntoView(driver.findElement(By.cssSelector(PRODUCT_ATTRIBUTES_CSS)));
         seleniumWait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(PRODUCT_ATTRIBUTES_CSS)));
         String sizeBodyName = driver.findElement(By.cssSelector(PRODUCT_ATTRIBUTES_CSS)).getText().replaceFirst("^(.+?), ", "");
