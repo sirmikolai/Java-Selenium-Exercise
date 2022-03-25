@@ -5,6 +5,7 @@ import datastructures.Color;
 import datastructures.SizeBody;
 import listeners.TestListener;
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
@@ -13,6 +14,8 @@ import testngpages.categories.DressesCategoryPage;
 import testngpages.categories.TShirtsCategoryPage;
 import testngpages.categories.WomenCategoryPage;
 import testngpages.layercartmodal.LayerCartModal;
+
+import static testngpages.Page.STORE_URL;
 
 @Listeners(TestListener.class)
 public class AddingAProductToTheCartTest extends AbstractTest {
@@ -66,5 +69,10 @@ public class AddingAProductToTheCartTest extends AbstractTest {
         Assert.assertEquals(layerCartModal.getColorOfProduct(), Color.YELLOW);
         Assert.assertEquals(layerCartModal.getSizeOfProduct(), SizeBody.S);
         layerCartModal.clickContinueShopping();
+    }
+
+    @AfterMethod
+    public void openHomePage() {
+        driver.navigate().to(STORE_URL);
     }
 }

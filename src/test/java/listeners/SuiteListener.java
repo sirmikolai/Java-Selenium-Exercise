@@ -1,5 +1,6 @@
 package listeners;
 
+import org.apache.log4j.Logger;
 import org.testng.ISuite;
 import org.testng.ISuiteListener;
 
@@ -14,6 +15,8 @@ import java.util.zip.ZipOutputStream;
 
 public class SuiteListener implements ISuiteListener {
 
+    private static final Logger logger = Logger.getLogger(SuiteListener.class);
+
     private static final String ZIPPED_FILE = "screenshots.zip";
     private static List<String> filesListInDir = new ArrayList<>();
 
@@ -26,6 +29,7 @@ public class SuiteListener implements ISuiteListener {
     @Override
     public void onFinish(ISuite iSuite) {
         zipFiles(TestListener.SOURCE_FOLDER);
+        logger.info("---Screenshots has been zipped---");
     }
 
     private void zipFiles(String filePath) {
