@@ -2,12 +2,16 @@ package testngpages.layercartmodal;
 
 import datastructures.Color;
 import datastructures.SizeBody;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import testngpages.Page;
+import testngpages.categories.WomenCategoryPage;
 
 public class LayerCartModal extends Page {
+
+    private static final Logger logger = Logger.getLogger(LayerCartModal.class);
 
     public static final String ROOT_CSS = "div[id='layer_cart']";
     private static final String MESSAGE_ABOUT_ADDED_PRODUCT_CSS = ROOT_CSS + " div[class*='layer_cart_product'] h2";
@@ -24,21 +28,21 @@ public class LayerCartModal extends Page {
     }
 
     public String getInformationAboutAddingProduct() {
-        System.out.println("Get message about added product");
+        logger.info("Get message about added product");
         scrollIntoView(driver.findElement(By.cssSelector(MESSAGE_ABOUT_ADDED_PRODUCT_CSS)));
         seleniumWait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(MESSAGE_ABOUT_ADDED_PRODUCT_CSS)));
         return driver.findElement(By.cssSelector(MESSAGE_ABOUT_ADDED_PRODUCT_CSS)).getText();
     }
 
     public String getProductName() {
-        System.out.println("Get product name");
+        logger.info("Get product name");
         scrollIntoView(driver.findElement(By.cssSelector(PRODUCT_NAME_CSS)));
         seleniumWait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(PRODUCT_NAME_CSS)));
         return driver.findElement(By.cssSelector(PRODUCT_NAME_CSS)).getText();
     }
 
     public Color getColorOfProduct() {
-        System.out.println("Get color of product");
+        logger.info("Get color of product");
         scrollIntoView(driver.findElement(By.cssSelector(PRODUCT_ATTRIBUTES_CSS)));
         seleniumWait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(PRODUCT_ATTRIBUTES_CSS)));
         String colorName = driver.findElement(By.cssSelector(PRODUCT_ATTRIBUTES_CSS)).getText().replaceFirst(",[^,]*$", "");
@@ -51,7 +55,7 @@ public class LayerCartModal extends Page {
     }
 
     public SizeBody getSizeOfProduct() {
-        System.out.println("Get size of product");
+        logger.info("Get size of product");
         scrollIntoView(driver.findElement(By.cssSelector(PRODUCT_ATTRIBUTES_CSS)));
         seleniumWait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(PRODUCT_ATTRIBUTES_CSS)));
         String sizeBodyName = driver.findElement(By.cssSelector(PRODUCT_ATTRIBUTES_CSS)).getText().replaceFirst("^(.+?), ", "");
@@ -64,7 +68,7 @@ public class LayerCartModal extends Page {
     }
 
     public Page clickContinueShopping() {
-        System.out.println("Click 'Continue shopping'");
+        logger.info("Click 'Continue shopping'");
         scrollIntoView(driver.findElement(By.cssSelector(CONTINUE_SHOPPING_CSS)));
         seleniumWait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(CONTINUE_SHOPPING_CSS)));
         driver.findElement(By.cssSelector(CONTINUE_SHOPPING_CSS)).click();

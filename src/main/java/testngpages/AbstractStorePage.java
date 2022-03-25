@@ -1,6 +1,7 @@
 package testngpages;
 
 import datastructures.Category;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -13,6 +14,8 @@ import java.time.Duration;
 
 public abstract class AbstractStorePage extends Page {
 
+    private static final Logger logger = Logger.getLogger(AbstractStorePage.class);
+
     private static final String SIGN_IN_BUTTON_CSS = "a[class='login']";
     private static final String CATEGORY_BUTTON_XPATH = "//ul[li/a[@title='%s']]";
     private static final String CATEGORY_BUTTON_CSS= "a[title='%s']";
@@ -22,7 +25,7 @@ public abstract class AbstractStorePage extends Page {
     }
 
     public SignInPage clickSignInButton() {
-        System.out.println("Click 'Sign in' button");
+        logger.info("Click 'Sign in' button");
         scrollIntoView(driver.findElement(By.cssSelector(SIGN_IN_BUTTON_CSS)));
         seleniumWait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(SIGN_IN_BUTTON_CSS)));
         driver.findElement(By.cssSelector(SIGN_IN_BUTTON_CSS)).click();
@@ -31,7 +34,7 @@ public abstract class AbstractStorePage extends Page {
     }
 
     public <T extends Page> T clickCategory(Category category, Class<T> clazz) {
-        System.out.println("Click category: " + category.getName());
+        logger.info("Click category: " + category.getName());
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1));
         scrollIntoView(driver.findElement(By.xpath(String.format(CATEGORY_BUTTON_XPATH, category.getName()))));
         String categoryCss = String.format(CATEGORY_BUTTON_CSS, category.getName());

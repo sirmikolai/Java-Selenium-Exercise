@@ -1,5 +1,6 @@
 package testngpages.categories;
 
+import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -7,6 +8,8 @@ import testngpages.Page;
 import testngpages.quickviewmodal.QuickViewModal;
 
 public abstract class AbstractCategoryPage extends Page {
+
+    private static final Logger logger = Logger.getLogger(AbstractCategoryPage.class);
 
     private static final String PRODUCT_NAME_XPATH = "//div[@class='product-container']" +
             "[div[@class='right-block']//a[contains(text(),'%s')]]";
@@ -17,7 +20,7 @@ public abstract class AbstractCategoryPage extends Page {
     }
 
     public QuickViewModal openQuickViewModalForProduct(String productName) {
-        System.out.println("Open Quick View modal for product: " + productName);
+        logger.info("Open Quick View modal for product: " + productName);
         scrollIntoView(driver.findElement(By.xpath(String.format(PRODUCT_NAME_XPATH, productName))));
         String quickViewModalXpath = String.format(OPEN_QUICK_VIEW_MODAL_FOR_PRODUCT_NAME_XPATH, productName);
         seleniumWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(quickViewModalXpath)));

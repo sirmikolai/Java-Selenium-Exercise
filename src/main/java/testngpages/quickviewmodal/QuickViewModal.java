@@ -2,6 +2,7 @@ package testngpages.quickviewmodal;
 
 import datastructures.Color;
 import datastructures.SizeBody;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -11,6 +12,8 @@ import testngpages.Page;
 import testngpages.layercartmodal.LayerCartModal;
 
 public class QuickViewModal extends Page {
+
+    private static final Logger logger = Logger.getLogger(QuickViewModal.class);
 
     private static final String IFRAME_CSS = "iframe[class='fancybox-iframe']";
     private static final String ROOT_CSS = "body[id='product']";
@@ -29,7 +32,7 @@ public class QuickViewModal extends Page {
     }
 
     public QuickViewModal inputQuantity(int quantity) {
-        System.out.println("Input quantity: " + quantity);
+        logger.info("Input quantity: " + quantity);
         scrollIntoView(driver.findElement(By.cssSelector(QUANTITY_INPUT_CSS)));
         seleniumWait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(QUANTITY_INPUT_CSS)));
         WebElement quantityInput = driver.findElement(By.cssSelector(QUANTITY_INPUT_CSS));
@@ -40,7 +43,7 @@ public class QuickViewModal extends Page {
     }
 
     public QuickViewModal selectSize(SizeBody sizeBody) {
-        System.out.println("Select size: " + sizeBody.getName());
+        logger.info("Select size: " + sizeBody.getName());
         scrollIntoView(driver.findElement(By.cssSelector(SIZE_SELECT_CSS)));
         Select countrySelect = new Select(driver.findElement(By.cssSelector(SIZE_SELECT_CSS)));
         countrySelect.selectByVisibleText(sizeBody.getName());
@@ -48,7 +51,7 @@ public class QuickViewModal extends Page {
     }
 
     public QuickViewModal selectColor(Color color) {
-        System.out.println("Select color: " + color.getName());
+        logger.info("Select color: " + color.getName());
         String colorSelectCssPath = String.format(COLOR_SELECT_CSS, color.getName());
         scrollIntoView(driver.findElement(By.cssSelector(colorSelectCssPath)));
         driver.findElement(By.cssSelector(colorSelectCssPath)).click();
@@ -56,7 +59,7 @@ public class QuickViewModal extends Page {
     }
 
     public LayerCartModal clickAddToCartButton() {
-        System.out.println("Click 'Add to cart' button");
+        logger.info("Click 'Add to cart' button");
         scrollIntoView(driver.findElement(By.cssSelector(ADD_TO_CART_BUTTON)));
         seleniumWait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(ADD_TO_CART_BUTTON)));
         driver.findElement(By.cssSelector(ADD_TO_CART_BUTTON)).click();
