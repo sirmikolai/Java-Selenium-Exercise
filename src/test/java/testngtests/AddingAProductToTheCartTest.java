@@ -3,8 +3,10 @@ package testngtests;
 import datastructures.Category;
 import datastructures.Color;
 import datastructures.SizeBody;
+import listeners.TestListener;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import testngpages.HomePage;
 import testngpages.categories.DressesCategoryPage;
@@ -12,6 +14,7 @@ import testngpages.categories.TShirtsCategoryPage;
 import testngpages.categories.WomenCategoryPage;
 import testngpages.layercartmodal.LayerCartModal;
 
+@Listeners(TestListener.class)
 public class AddingAProductToTheCartTest extends AbstractTest {
 
     @BeforeClass

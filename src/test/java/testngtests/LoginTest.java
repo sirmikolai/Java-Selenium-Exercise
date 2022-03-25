@@ -1,11 +1,14 @@
 package testngtests;
 
+import listeners.TestListener;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import testngpages.HomePage;
 import testngpages.accountpages.AccountPage;
 
+@Listeners(TestListener.class)
 public class LoginTest extends AbstractTest {
 
     @BeforeClass
