@@ -1,14 +1,17 @@
 package testngtests;
 
 import exercise1.Operation;
+import listeners.TestListener;
 import org.testng.Assert;
 import org.testng.annotations.AfterGroups;
 import org.testng.annotations.BeforeGroups;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 
+@Listeners(TestListener.class)
 public class Exercise1Test {
 
     private Operation operation = new Operation();

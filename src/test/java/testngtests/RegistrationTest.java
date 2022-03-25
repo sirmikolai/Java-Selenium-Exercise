@@ -3,12 +3,15 @@ package testngtests;
 import com.devskiller.jfairy.Fairy;
 import com.devskiller.jfairy.producer.person.Person;
 import datastructures.Gender;
+import listeners.TestListener;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import testngpages.HomePage;
 import testngpages.accountpages.AccountPage;
 
+@Listeners(TestListener.class)
 public class RegistrationTest extends AbstractTest {
 
     private Fairy fairy = Fairy.create();

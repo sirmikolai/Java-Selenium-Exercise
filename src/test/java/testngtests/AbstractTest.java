@@ -23,6 +23,10 @@ public abstract class AbstractTest {
         driver.get(STORE_URL);
     }
 
+    public WebDriver getDriver() {
+        return this.driver;
+    }
+
     private WebDriver getBrowser(BrowserType browserType) {
         switch (browserType) {
             case FIREFOX:
