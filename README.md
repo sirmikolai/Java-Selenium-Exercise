@@ -9,10 +9,12 @@ SeleniumExercise jest to repozytorium z testami automatycznymi. Jeden z nich spr
 - dodawanie produktu do koszyka używając opcji "Quick view".
 ```
  
-Testy automatyczne korzystają z poniższych bibliotek:
+Testy automatyczne korzystają m.in. z poniższych bibliotek:
 ```
 - Selenium v.4.1.2,
-- TestNG v.7.5.
+- TestNG v.7.5,
+- ReportNG v.1.1.4,
+- Log4j 1.2.17.
 ```
 
 Podczas implementacji testów automatycznych został użyty wzorzec Page Object Model.
@@ -44,3 +46,11 @@ Do uruchomienia wszystkich testów w tym repozytorium można użyć polecenia:
 ```
 mvn test
 ```
+ 
+ ## Pozostałe informacje:
+ 
+ Testy korzystają z biblioteki `ReportNG`. Po wykonaniu testów w lokalizacji `.\target\surefire-reports` znajduje się raport w postaci plików HTML oraz XML.
+ 
+ Jeśli test nie wykona się poprawnie to zostanie wykonany zrzut ekranu. Screenshoty dostępne są w lokalizacji `.\target\screenshots`.
+ 
+ W projekcie zastosowana została biblioteka`Log4j`. Za jej pośrednictwem logowane są zdarzenia i zapisywane w lokalizacji `.\logs`.
